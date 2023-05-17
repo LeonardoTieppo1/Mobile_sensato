@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-title>Pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+      <div style="display: flex; align-items: center;justify-content: center;">
+          <img src="https://raw.githubusercontent.com/esensato/mobile-2022-01/main/img/pizza-{{pizzaSelect.id}}.jpg" style="width: 300px; width: 300px;" />
+      </div>
+      <ion-card-header>
+          <ion-card-subtitle>Confira baixo o seu pedido</ion-card-subtitle>
+          <ion-card-title>Pedido</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item>
+              {{pizzaSelect.nome}} - R$ {{pizzaSelect.preco}}
+            </ion-item>
+          <ion-item>
+            <div style="padding-right:20px;">
+              {{bebidaSelect.nome}} - R$ {{bebidaSelect.preco}}
+            </div>
+            </ion-item>
+            <ion-item>
+            <h4>Quantidade(s):</h4>  
+              <ion-input type="number" size="2" value="1" (ionChange)="recalcular($event.target.value)" value={{quantidade}}></ion-input>
+            </ion-item>
+          <ion-item>
+              <ion-checkbox (ionChange)="queijoExtra($event.target)"></ion-checkbox>
+              <div>Queijo Extra</div>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="cash"></ion-icon>
+              <div>Total: R${{total}}</div>
+          </ion-item>
+
+          <ion-item>
+              
+              <div>
+                  <ion-button (click)="enviarPedido()">Salvar Pedido</ion-button>
+              </div>
+          </ion-item>
+      </ion-card-content>
+      </ion-card>
+      </ion-content>

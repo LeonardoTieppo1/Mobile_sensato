@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-title>Cardápio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list [hidden]=ocultarCardapio>
+      <ion-list-header>
+          <ion-label>Pizzas</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let pizza of cardapio.pizzas" button (click)="selPizza(pizza)">
+          <ion-avatar>
+              <img src="https://raw.githubusercontent.com/esensato/mobile-2022-01/main/img/pizza-{{pizza.id}}.jpg" />
+          </ion-avatar>
+          <ion-label>
+              <h2>{{pizza.nome}}</h2>
+              <h3>R${{pizza.preco}}</h3>
+          </ion-label>
+      </ion-item>
+  </ion-list>
+
+  <ion-list [hidden]=!ocultarCardapio>
+      <ion-list-header>
+          <ion-label>Bebidas</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let bebida of cardapio.bebidas" button (click)="selBebida(bebida)">
+          <ion-avatar>
+              <img src="https://raw.githubusercontent.com/esensato/mobile-2022-01/main/img/bebida-{{bebida.id}}.jpg" />
+          </ion-avatar>
+          <ion-label>
+              <h2>{{bebida.nome}}</h2>
+              <h3>R${{bebida.preco}}</h3>
+          </ion-label>
+      </ion-item>
+  </ion-list>

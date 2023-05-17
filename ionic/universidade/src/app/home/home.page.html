@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="background-color: blue">
+    <ion-title>
+      Pesquisar
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <div class="body">
+       <ion-label>
+        <h1>País</h1>
+        <ion-input placeholder="Digite o pais que deseja" [(ngModel)]="country"></ion-input>        
+       </ion-label>
+
+      <ion-label>
+        <h1>Categoria escolar</h1>
+        <ion-input placeholder="Digite a categoria escolar" [(ngModel)]="nome"></ion-input>
+      </ion-label>
+      
+      <ion-button (click)="pesquisaUni()">
+        Pesquisar
+      </ion-button>
+</div>
+
+      <ion-list *ngFor="let uni of resultSearch">
+        <ion-item>
+        <ion-label>
+        <h3>{{uni.name}}</h3>
+        <h2>{{uni.country}}</h2>
+      </ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>

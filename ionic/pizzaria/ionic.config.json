@@ -1,0 +1,7 @@
+{
+  "name": "pizzaria",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
